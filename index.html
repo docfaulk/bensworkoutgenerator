@@ -16,10 +16,8 @@
             --text-secondary: #888;
             --accent-run: #e85d04;
             --accent-strength: #4cc9f0;
-            --accent-info: #a855f7;
             --accent-run-dim: rgba(232, 93, 4, 0.15);
             --accent-strength-dim: rgba(76, 201, 240, 0.15);
-            --accent-info-dim: rgba(168, 85, 247, 0.15);
             --border: #2a2a2a;
         }
 
@@ -44,7 +42,7 @@
         }
 
         header {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             padding-bottom: 1.5rem;
             border-bottom: 1px solid var(--border);
         }
@@ -122,15 +120,6 @@
             margin-bottom: 1.5rem;
         }
 
-        .form-row {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-        }
-
         label {
             display: block;
             font-family: 'JetBrains Mono', monospace;
@@ -141,7 +130,7 @@
             margin-bottom: 0.5rem;
         }
 
-        select, input[type="text"] {
+        select {
             width: 100%;
             padding: 0.875rem 1rem;
             background: var(--bg-secondary);
@@ -150,9 +139,6 @@
             color: var(--text-primary);
             font-family: 'Outfit', sans-serif;
             font-size: 1rem;
-        }
-
-        select {
             cursor: pointer;
             appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
@@ -160,7 +146,7 @@
             background-position: right 1rem center;
         }
 
-        select:focus, input[type="text"]:focus {
+        select:focus {
             outline: none;
             border-color: var(--text-secondary);
         }
@@ -287,130 +273,47 @@
             cursor: pointer;
         }
 
-        /* Goal splits display */
-        .splits-display {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .splits-header {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-secondary);
-            margin-bottom: 0.75rem;
-        }
-
-        .splits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 0.75rem;
-        }
-
-        .split-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .split-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        .split-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1rem;
-            color: var(--accent-run);
-        }
-
-        .no-splits {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* RPE Guide */
-        .rpe-guide {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .rpe-header {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .rpe-description {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .rpe-value {
-            color: var(--accent-strength);
-            font-weight: 500;
-        }
-
-        /* Info/Sources section */
         .info-toggle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 2rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
         }
 
         .info-toggle:hover {
-            border-color: var(--accent-info);
-            color: var(--accent-info);
-        }
-
-        .info-toggle svg {
-            width: 18px;
-            height: 18px;
+            color: var(--text-primary);
         }
 
         .info-content {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
-            border-top: none;
-            border-radius: 0 0 6px 6px;
+            border-radius: 6px;
             padding: 1.25rem;
-            margin-top: -6px;
-        }
-
-        .info-content h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .info-content p, .info-content li {
-            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+            line-height: 1.7;
         }
 
-        .info-content ul {
-            margin-left: 1.25rem;
-            margin-bottom: 1rem;
+        .info-content p {
+            margin-bottom: 0.75rem;
+        }
+
+        .info-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-content strong {
+            color: var(--text-primary);
         }
 
         @media (max-width: 600px) {
@@ -425,15 +328,6 @@
             .workout-option {
                 padding: 1rem;
             }
-
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-
-            .splits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
     </style>
 </head>
@@ -441,78 +335,56 @@
     <div class="container">
         <header>
             <h1>Workout Generator</h1>
-            <div class="subtitle">Goal-pace anchored • Settings saved locally</div>
+            <div class="subtitle">Variation within structure</div>
         </header>
 
         <div class="mode-toggle">
-            <button class="mode-btn active" data-mode="running" onclick="switchMode('running')">Running</button>
-            <button class="mode-btn" data-mode="strength" onclick="switchMode('strength')">Strength</button>
+            <button class="mode-btn active" data-mode="running">Running</button>
+            <button class="mode-btn" data-mode="strength">Strength</button>
         </div>
 
-        <!-- RUNNING SECTION -->
         <div id="running-section" class="section running-section active">
-            
-            <!-- Goal Input -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Goal Event</label>
-                    <select id="goal-event">
-                        <option value="800">800m</option>
-                        <option value="1500">1500m</option>
-                        <option value="mile" selected>Mile</option>
-                        <option value="3k">3K</option>
-                        <option value="5k">5K</option>
-                        <option value="10k">10K</option>
-                        <option value="half">Half Marathon</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Goal Time (mm:ss or h:mm:ss)</label>
-                    <input type="text" id="goal-time" placeholder="e.g. 5:00 or 1:29:30">
-                </div>
-            </div>
-
-            <!-- Calculated Splits Display -->
-            <div id="splits-display" class="splits-display">
-                <div class="splits-header">Goal Splits</div>
-                <div id="splits-content" class="no-splits">
-                    Enter a goal time to see your target splits
-                </div>
+            <button class="info-toggle" id="running-info-toggle">
+                <span>▶</span> How this works
+            </button>
+            <div id="running-info" class="info-content hidden">
+                <p><strong>Running workouts are built on the training principles of Jack Daniels and Steve Magness.</strong></p>
+                <p>Workouts scale based on your goal event. Shorter events emphasize faster reps and speed work; longer events emphasize threshold and sustained efforts.</p>
+                <p><strong>Easy days:</strong> Add 6-8 strides (15-20 sec light, quick runs with 45-60 sec recovery) to 2+ easy runs per week.</p>
+                <p><strong>Recovery:</strong> Respect the prescribed rest — it's part of the workout. The rest ensures quality reps and proper energy system training.</p>
             </div>
 
             <div class="form-group">
+                <label>Goal Event</label>
+                <select id="goal-event">
+                    <option value="800">800m</option>
+                    <option value="mile" selected>1500m / Mile</option>
+                    <option value="5k">5K / 10K</option>
+                    <option value="half">Half Marathon+</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label>Session Type</label>
                 <select id="running-type">
-                    <option value="hill-power">Hill Power</option>
-                    <option value="hill-sustained">Hill Sustained</option>
-                    <option value="track-pure-speed">Track – Pure Speed</option>
-                    <option value="track-race-prep">Track – Race Prep</option>
+                    <option value="hills">Hills</option>
+                    <option value="pure-speed">Pure Speed</option>
+                    <option value="track">Track Intervals</option>
                     <option value="tempo">Tempo / Threshold</option>
                     <option value="long-run">Long Run</option>
                 </select>
             </div>
-            
-            <button class="generate-btn" onclick="generateRunning()">Generate Options</button>
+            <button class="generate-btn" id="generate-running-btn">Generate Options</button>
             <div id="running-results" class="results hidden"></div>
         </div>
 
-        <!-- STRENGTH SECTION -->
         <div id="strength-section" class="section strength-section">
-            
-            <div class="form-group">
-                <label>Training Phase</label>
-                <select id="training-phase">
-                    <option value="maintenance">Maintenance – Preserve strength during heavy running</option>
-                    <option value="building">Building – Progressive overload, more volume</option>
-                </select>
-            </div>
-
-            <!-- RPE Guide -->
-            <div class="rpe-guide">
-                <div class="rpe-header">Intensity Guide (RPE)</div>
-                <div id="rpe-content" class="rpe-description">
-                    <strong class="rpe-value">Maintenance:</strong> Work at RPE 6-7. Sets should feel solid but sustainable—you could do 2-3 more reps if needed.
-                </div>
+            <button class="info-toggle" id="strength-info-toggle">
+                <span>▶</span> How this works
+            </button>
+            <div id="strength-info" class="info-content hidden">
+                <p><strong>Strength workouts are designed for efficient training with whatever equipment you have.</strong></p>
+                <p>The philosophy centers on compound movements and major chain training: upper pull, upper push, lower squat patterns, and lower hinge patterns. Each workout covers the relevant chains for balanced development.</p>
+                <p>Inspired by the creator's love of calisthenics and the principle that simple, consistent work on fundamental movements beats complicated programming.</p>
             </div>
 
             <div class="form-group">
@@ -523,7 +395,6 @@
                     <option value="full">Full Body</option>
                 </select>
             </div>
-            
             <div class="form-group">
                 <label>Equipment</label>
                 <select id="equipment">
@@ -532,234 +403,44 @@
                     <option value="gym">Full Gym</option>
                 </select>
             </div>
-            
             <div id="dip-bars-option" class="checkbox-group hidden">
                 <input type="checkbox" id="has-dip-bars">
                 <label for="has-dip-bars">Dip bars available</label>
             </div>
-            
-            <button class="generate-btn" onclick="generateStrength()">Generate Options</button>
+            <button class="generate-btn" id="generate-strength-btn">Generate Options</button>
             <div id="strength-results" class="results hidden"></div>
-        </div>
-
-        <!-- INFO SECTION -->
-        <div class="info-toggle" onclick="toggleInfo()">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>How This Works</span>
-        </div>
-        <div id="info-content" class="info-content hidden">
-            <h3>Pace Targets</h3>
-            <p>Workouts reference your goal race pace rather than calculating paces from a recent race result. Enter your goal event and target time to see relevant splits.</p>
-            <ul>
-                <li><strong>Goal pace:</strong> Your target splits for the goal event</li>
-                <li><strong>Faster than goal:</strong> Speed reserve work</li>
-                <li><strong>Effort-based:</strong> Threshold, 5K effort, easy—by feel</li>
-            </ul>
-            
-            <h3>Recovery &amp; Rest</h3>
-            <p>Shorter, faster efforts generally need more recovery to maintain quality. Rest intervals in strength workouts scale with how heavy you're lifting. Adjust based on how you feel.</p>
         </div>
     </div>
 
     <script>
-        // =====================================================
-        // GOAL PACE CALCULATIONS
-        // =====================================================
-
-        // Event distances in meters
-        const eventDistances = {
-            '800': 800,
-            '1500': 1500,
-            'mile': 1609.34,
-            '3k': 3000,
-            '5k': 5000,
-            '10k': 10000,
-            'half': 21097
-        };
-
-        // Current goal data
-        let currentGoal = null;
-
-        function parseTime(timeStr) {
-            if (!timeStr) return null;
-            const parts = timeStr.trim().split(':').map(Number);
-            if (parts.some(isNaN)) return null;
-            
-            if (parts.length === 2) {
-                return parts[0] * 60 + parts[1];
-            } else if (parts.length === 3) {
-                return parts[0] * 3600 + parts[1] * 60 + parts[2];
-            }
-            return null;
-        }
-
-        function formatTime(seconds) {
-            if (seconds < 60) {
-                return seconds.toFixed(0) + 's';
-            } else if (seconds < 3600) {
-                const mins = Math.floor(seconds / 60);
-                const secs = Math.round(seconds % 60);
-                return `${mins}:${secs.toString().padStart(2, '0')}`;
-            } else {
-                const hrs = Math.floor(seconds / 3600);
-                const mins = Math.floor((seconds % 3600) / 60);
-                const secs = Math.round(seconds % 60);
-                return `${hrs}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-            }
-        }
-
-        function formatPace(secondsPerMile) {
-            const mins = Math.floor(secondsPerMile / 60);
-            const secs = Math.round(secondsPerMile % 60);
-            return `${mins}:${secs.toString().padStart(2, '0')}/mi`;
-        }
-
-        function calculateGoalSplits(eventKey, totalSeconds) {
-            const distance = eventDistances[eventKey];
-            if (!distance || !totalSeconds) return null;
-
-            const pacePerMeter = totalSeconds / distance;
-            
-            return {
-                event: eventKey,
-                totalTime: totalSeconds,
-                distance: distance,
-                pacePerMeter: pacePerMeter,
-                splits: {
-                    '200m': pacePerMeter * 200,
-                    '400m': pacePerMeter * 400,
-                    '600m': pacePerMeter * 600,
-                    '800m': pacePerMeter * 800,
-                    '1000m': pacePerMeter * 1000,
-                    '1200m': pacePerMeter * 1200,
-                    'mile': pacePerMeter * 1609.34
-                },
-                // Relative paces
-                fasterPer400: pacePerMeter * 400 - 4, // 4 seconds faster per 400m
-                slowerPer400: pacePerMeter * 400 + 4  // 4 seconds slower per 400m
-            };
-        }
-
-        function updateSplits() {
-            const eventEl = document.getElementById('goal-event');
-            const timeEl = document.getElementById('goal-time');
-            const splitsContent = document.getElementById('splits-content');
-            
-            const event = eventEl.value;
-            const timeStr = timeEl.value;
-            
-            if (!timeStr) {
-                splitsContent.innerHTML = '<span class="no-splits">Enter a goal time to see your target splits</span>';
-                currentGoal = null;
-                return;
-            }
-            
-            const totalSeconds = parseTime(timeStr);
-            if (!totalSeconds) {
-                splitsContent.innerHTML = '<span class="no-splits">Invalid time format. Use mm:ss or h:mm:ss</span>';
-                currentGoal = null;
-                return;
-            }
-            
-            currentGoal = calculateGoalSplits(event, totalSeconds);
-            if (!currentGoal) {
-                splitsContent.innerHTML = '<span class="no-splits">Could not calculate splits</span>';
-                return;
-            }
-
-            // Determine which splits to show based on event
-            let splitsHtml = '<div class="splits-grid">';
-            
-            if (['800', '1500', 'mile'].includes(event)) {
-                // Short events: show 200m, 400m, 600m, 800m
-                splitsHtml += `
-                    <div class="split-item">
-                        <span class="split-label">200m</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['200m'])}</span>
-                    </div>
-                    <div class="split-item">
-                        <span class="split-label">400m</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['400m'])}</span>
-                    </div>
-                    <div class="split-item">
-                        <span class="split-label">600m</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['600m'])}</span>
-                    </div>
-                    <div class="split-item">
-                        <span class="split-label">800m</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['800m'])}</span>
-                    </div>
-                `;
-            } else if (['3k', '5k'].includes(event)) {
-                // Medium events: show 400m, 800m, 1000m, mile pace
-                splitsHtml += `
-                    <div class="split-item">
-                        <span class="split-label">400m</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['400m'])}</span>
-                    </div>
-                    <div class="split-item">
-                        <span class="split-label">800m</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['800m'])}</span>
-                    </div>
-                    <div class="split-item">
-                        <span class="split-label">1000m</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['1000m'])}</span>
-                    </div>
-                    <div class="split-item">
-                        <span class="split-label">Mile</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['mile'])}</span>
-                    </div>
-                `;
-            } else {
-                // Long events: show 800m, 1000m, mile pace, per-mile pace
-                splitsHtml += `
-                    <div class="split-item">
-                        <span class="split-label">800m</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['800m'])}</span>
-                    </div>
-                    <div class="split-item">
-                        <span class="split-label">1000m</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['1000m'])}</span>
-                    </div>
-                    <div class="split-item">
-                        <span class="split-label">Mile</span>
-                        <span class="split-value">${formatTime(currentGoal.splits['mile'])}</span>
-                    </div>
-                    <div class="split-item">
-                        <span class="split-label">Pace</span>
-                        <span class="split-value">${formatPace(currentGoal.splits['mile'])}</span>
-                    </div>
-                `;
-            }
-            
-            splitsHtml += '</div>';
-            splitsContent.innerHTML = splitsHtml;
-        }
-
-        // Event listeners for splits calculation
-        document.getElementById('goal-event').addEventListener('change', updateSplits);
-        document.getElementById('goal-time').addEventListener('blur', updateSplits);
-        document.getElementById('goal-time').addEventListener('keyup', function(e) {
-            if (e.key === 'Enter') updateSplits();
+        // Mode toggle
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const mode = btn.dataset.mode;
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                document.getElementById(`${mode}-section`).classList.add('active');
+            });
         });
 
-        // =====================================================
-        // MODE SWITCHING
-        // =====================================================
+        // Info toggles
+        document.getElementById('running-info-toggle').addEventListener('click', () => {
+            const info = document.getElementById('running-info');
+            const toggle = document.getElementById('running-info-toggle');
+            info.classList.toggle('hidden');
+            toggle.querySelector('span').textContent = info.classList.contains('hidden') ? '▶' : '▼';
+        });
 
-        function switchMode(mode) {
-            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-            document.querySelector(`.mode-btn[data-mode="${mode}"]`).classList.add('active');
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.getElementById(`${mode}-section`).classList.add('active');
-        }
+        document.getElementById('strength-info-toggle').addEventListener('click', () => {
+            const info = document.getElementById('strength-info');
+            const toggle = document.getElementById('strength-info-toggle');
+            info.classList.toggle('hidden');
+            toggle.querySelector('span').textContent = info.classList.contains('hidden') ? '▶' : '▼';
+        });
 
-        // =====================================================
-        // EQUIPMENT & PHASE HANDLING
-        // =====================================================
-
+        // Show/hide dip bars checkbox based on equipment selection
         function updateDipBarsVisibility() {
             const equipment = document.getElementById('equipment').value;
             const dipBarsOption = document.getElementById('dip-bars-option');
@@ -770,514 +451,727 @@
             }
         }
 
-        function updateRpeGuide() {
-            const phase = document.getElementById('training-phase').value;
-            const rpeContent = document.getElementById('rpe-content');
-            
-            if (phase === 'maintenance') {
-                rpeContent.innerHTML = '<strong class="rpe-value">Maintenance:</strong> Work at RPE 6-7. Sets should feel solid but sustainable—you could do 2-3 more reps if needed. Preserve strength without accumulating fatigue.';
-            } else {
-                rpeContent.innerHTML = '<strong class="rpe-value">Building:</strong> Work at RPE 7-8. Last 1-2 reps should be challenging. Progress by adding reps or weight when sets feel easier than RPE 7.';
-            }
-        }
-
         document.getElementById('equipment').addEventListener('change', updateDipBarsVisibility);
-        document.getElementById('training-phase').addEventListener('change', updateRpeGuide);
-        
-        // Initialize
         updateDipBarsVisibility();
-        updateRpeGuide();
-
-        // =====================================================
-        // LOCAL STORAGE
-        // =====================================================
-
-        function loadSettings() {
-            try {
-                const saved = localStorage.getItem('workoutGeneratorSettings');
-                if (saved) {
-                    const settings = JSON.parse(saved);
-                    if (settings.goalEvent) document.getElementById('goal-event').value = settings.goalEvent;
-                    if (settings.goalTime) document.getElementById('goal-time').value = settings.goalTime;
-                    if (settings.trainingPhase) document.getElementById('training-phase').value = settings.trainingPhase;
-                    if (settings.equipment) document.getElementById('equipment').value = settings.equipment;
-                    if (settings.hasDipBars) document.getElementById('has-dip-bars').checked = settings.hasDipBars;
-                    updateSplits();
-                    updateDipBarsVisibility();
-                    updateRpeGuide();
-                }
-            } catch (e) {
-                // localStorage not available or corrupted, ignore
-            }
-        }
-
-        function saveSettings() {
-            try {
-                const settings = {
-                    goalEvent: document.getElementById('goal-event').value,
-                    goalTime: document.getElementById('goal-time').value,
-                    trainingPhase: document.getElementById('training-phase').value,
-                    equipment: document.getElementById('equipment').value,
-                    hasDipBars: document.getElementById('has-dip-bars').checked
-                };
-                localStorage.setItem('workoutGeneratorSettings', JSON.stringify(settings));
-            } catch (e) {
-                // localStorage not available, ignore
-            }
-        }
-
-        // Save on change
-        document.getElementById('goal-event').addEventListener('change', saveSettings);
-        document.getElementById('goal-time').addEventListener('blur', saveSettings);
-        document.getElementById('training-phase').addEventListener('change', saveSettings);
-        document.getElementById('equipment').addEventListener('change', saveSettings);
-        document.getElementById('has-dip-bars').addEventListener('change', saveSettings);
-
-        // Load settings on page load
-        loadSettings();
-
-        // =====================================================
-        // INFO TOGGLE
-        // =====================================================
-
-        function toggleInfo() {
-            const content = document.getElementById('info-content');
-            content.classList.toggle('hidden');
-        }
 
         // =====================================================
         // RUNNING WORKOUTS
-        // Paces anchored to goal, or effort-based where appropriate
+        // Based on: Jack Daniels' Running Formula & Steve Magness' Science of Running
         // =====================================================
         
-        function getRunningWorkouts(goalEvent) {
-            // Check if we have goal splits
-            const hasGoal = currentGoal !== null;
-            
-            // Generate pace descriptors
-            let goalPace400 = hasGoal ? formatTime(currentGoal.splits['400m']) : 'goal pace';
-            let goalPace200 = hasGoal ? formatTime(currentGoal.splits['200m']) : 'goal pace';
-            let goalPace600 = hasGoal ? formatTime(currentGoal.splits['600m']) : 'goal pace';
-            let goalPace800 = hasGoal ? formatTime(currentGoal.splits['800m']) : 'goal pace';
-            let fasterPace400 = hasGoal ? formatTime(currentGoal.fasterPer400) : '3-5s faster than goal';
-            
-            // Descriptive labels for workouts
-            let goal400Label = hasGoal ? `${goalPace400} (goal ${goalEvent} pace)` : 'goal pace per 400m';
-            let goal200Label = hasGoal ? `${goalPace200} (goal ${goalEvent} pace)` : 'goal pace per 200m';
-            let faster400Label = hasGoal ? `${fasterPace400} (3-5s faster than goal)` : '3-5s faster than goal per 400m';
-
-            // Event category for scaling
-            let eventCategory;
-            if (['800', '1500', 'mile'].includes(goalEvent)) {
-                eventCategory = '800-mile';
-            } else if (['3k', '5k', '10k'].includes(goalEvent)) {
-                eventCategory = '5k-10k';
-            } else {
-                eventCategory = 'half';
-            }
-
-            // Goal-event specific scaling
-            const eventScaling = {
-                '800-mile': {
-                    longRunMiles: '5-7',
-                    longRunProgression: 6,
-                    tempoMinutes: '15-20',
-                    tempoCruiseReps: '4-5',
-                    tempoCruiseDuration: '4:00',
-                    hillSustainedReps: '5-6',
-                    hillSustainedDuration: '1:30-2:00',
-                    hillLongDuration: '2:00-2:30',
-                    hillLadder: '0:45, 1:00, 1:30, 1:00, 0:45'
-                },
-                '5k-10k': {
-                    longRunMiles: '8-11',
-                    longRunProgression: 9,
-                    tempoMinutes: '20-30',
-                    tempoCruiseReps: '4-5',
-                    tempoCruiseDuration: '5:00',
-                    hillSustainedReps: '4-5',
-                    hillSustainedDuration: '2:00-2:30',
-                    hillLongDuration: '3:00-4:00',
-                    hillLadder: '1:00, 2:00, 3:00, 2:00, 1:00'
-                },
-                'half': {
-                    longRunMiles: '10-14',
-                    longRunProgression: 12,
-                    tempoMinutes: '25-40',
-                    tempoCruiseReps: '4-6',
-                    tempoCruiseDuration: '6:00',
-                    hillSustainedReps: '3-4',
-                    hillSustainedDuration: '2:30-3:00',
-                    hillLongDuration: '4:00-5:00',
-                    hillLadder: '1:30, 2:30, 4:00, 2:30, 1:30'
-                }
-            };
-
-            const scale = eventScaling[eventCategory];
-
-            return {
-                'hill-power': [
+        const runningWorkouts = {
+            'hills': {
+                '800': [
                     {
-                        name: "Short Hill Bombs",
-                        details: "6-8 x 20-30 sec on a steep hill\nEffort: Near max (95%)\nRecovery: Walk down + 2 min standing",
-                        notes: "Pure power. Full recovery between reps to maintain quality."
+                        name: "Hill Sprints",
+                        details: "8-10 x 8-10 sec on steep-moderate grade\nEffort: All out\nRecovery: 2-3 min full (walk down + standing)",
+                        notes: "Neuromuscular power. Respect the full recovery — it's what allows max effort."
                     },
                     {
-                        name: "Hill Accelerations",
-                        details: "5-6 x 30-40 sec, building through each rep\nStart at 80%, finish at 95%\nRecovery: Walk down + 90 sec",
-                        notes: "Submaximal start means slightly shorter recovery is fine. Focus on acceleration."
+                        name: "Hill 400s",
+                        details: "5-6 x 400m on gradual grade\nEffort: 800m-mile effort\nRecovery: Jog down + 1-2 min standing",
+                        notes: "Strength endurance. Holding form when legs are falling apart."
                     },
                     {
-                        name: "Hill Sprint Ladder",
-                        details: "15, 20, 25, 30, 25, 20, 15 sec\nEffort: 90-95% throughout\nRecovery: Walk down + 2 min (shorter reps), 2.5-3 min (longer reps)",
-                        notes: "Scale recovery to rep length. The 30 sec rep needs the most rest."
+                        name: "Hill Ladder",
+                        details: "90 sec, 60 sec, 30 sec — repeat 2-3x\nEffort: Hard/controlled on 90s and 60s, very hard on 30s\nRecovery: Jog down between reps, 2-3 min between sets",
+                        notes: "Mixed stimulus. The 30s should hurt."
                     },
                     {
-                        name: "Power 10s",
-                        details: "10 x 10-15 sec on the steepest hill you can find\nEffort: Absolute max\nRecovery: 2-3 min full recovery",
-                        notes: "True neuromuscular work. Full recovery between reps to maintain max output."
-                    },
-                    {
-                        name: "Broken Hill 200s",
-                        details: "5 x 30-40 sec hard (approx 200m on steep grade)\nEffort: 90-95%\nRecovery: Walk down + 2.5 min",
-                        notes: "Longer than a sprint, still power-dominant. Enough rest to repeat quality."
+                        name: "Short Hill VO2max",
+                        details: "20 x 30 sec on moderate grade\nEffort: 5K effort\nRecovery: 30 sec (jog down or standing)",
+                        notes: "Accumulated VO2max time with reduced impact."
                     }
                 ],
-                'hill-sustained': [
+                'mile': [
                     {
-                        name: "Threshold Climb Repeats",
-                        details: `${scale.hillSustainedReps} x ${scale.hillSustainedDuration} on moderate grade\nEffort: Threshold (comfortably hard)\nRecovery: Jog down + 1 min standing`,
-                        notes: "Should feel sustainable but honest. Practice pacing."
+                        name: "Hill Sprints",
+                        details: "6-10 x 8-10 sec on steep-moderate grade\nEffort: All out\nRecovery: 2-3 min full (walk down + standing)",
+                        notes: "Neuromuscular power. Respect the full recovery — it's what allows max effort."
                     },
                     {
-                        name: "Long Hill Tempo",
-                        details: `3-4 x ${scale.hillLongDuration} on steady grade\nEffort: Strong but controlled (half marathon feel)\nRecovery: 4-5 min easy (jog down + extra rest)`,
-                        notes: "Building sustained climbing capacity. Find your rhythm early."
+                        name: "Hill 400s",
+                        details: "4-6 x 400m on gradual grade\nEffort: Mile effort\nRecovery: Jog down + 1-2 min standing",
+                        notes: "Strength endurance. The gradual grade lets you still run fast."
                     },
                     {
-                        name: "Climbing Ladder",
-                        details: `${scale.hillLadder}\nEffort: Threshold throughout\nRecovery: Jog down + 1 min (~1:1 work:rest total)`,
-                        notes: "The middle rep is the main event. Stay composed through it."
+                        name: "Hill VO2max",
+                        details: "10 x 1 min on moderate grade\nEffort: 5K effort\nRecovery: 1 min (jog down or equal time)",
+                        notes: "VO2max stimulus with reduced pounding."
                     },
                     {
-                        name: "Hill Cruise Intervals",
-                        details: "6-8 x 90 sec on moderate hill\nEffort: 10K feel (hard but repeatable)\nRecovery: Jog down (~2 min total)",
-                        notes: "Volume day. Effort should be honest but sustainable across all reps."
+                        name: "Hill Ladder",
+                        details: "90 sec, 60 sec, 30 sec — repeat 2-3x\nEffort: Hard/controlled on 90s and 60s, very hard on 30s\nRecovery: Jog down between reps, 2-3 min between sets",
+                        notes: "Mixed stimulus. Stay controlled early, let it rip on the 30s."
                     },
                     {
-                        name: "Race Simulation",
-                        details: "2 x 2:30-3:00 all-out on race-like grade\nEffort: Race effort (maximal sustainable)\nRecovery: 8-10 min between reps",
-                        notes: "Closest thing to racing uphill. Very taxing—use sparingly."
+                        name: "Short Hill VO2max",
+                        details: "20 x 30 sec on moderate grade\nEffort: 5K effort\nRecovery: 30 sec",
+                        notes: "Accumulated VO2max time. Short rest keeps you at max."
                     }
                 ],
-                'track-pure-speed': [
+                '5k': [
                     {
-                        name: "Fly 30s",
-                        details: "6-8 x 30m fly (20m build-up + 30m max)\nEffort: Absolute max\nRecovery: Walk back + 3 min standing",
-                        notes: "Pure top-end speed. Full recovery, max intent every rep."
+                        name: "Hill Sprints",
+                        details: "6-8 x 8-10 sec on steep-moderate grade\nEffort: All out\nRecovery: 2-3 min full",
+                        notes: "Speed maintenance. Respect the full recovery. Every 2-4 weeks is sufficient."
                     },
                     {
-                        name: "Acceleration 60s",
-                        details: "6-8 x 60m from standing or 3-point start\nEffort: Max\nRecovery: Walk back + 3-4 min",
-                        notes: "Work the drive phase. Patience out of the start, then unwind."
+                        name: "Hill VO2max",
+                        details: "10 x 1 min on moderate grade\nEffort: 5K effort\nRecovery: 1 min",
+                        notes: "VO2max with strength component."
                     },
                     {
-                        name: "150m Reps",
-                        details: "5-6 x 150m at 95-100%\nRecovery: 6-8 min (walk back + standing rest)",
-                        notes: "Speed endurance. Long enough to feel it, short enough to stay fast. If times drop >5%, stop or take more rest."
+                        name: "Hill Ladder",
+                        details: "90 sec, 60 sec, 30 sec — repeat 3x\nEffort: Hard/controlled throughout, faster on shorter reps\nRecovery: Jog down between reps, 2-3 min between sets",
+                        notes: "Good volume day. Stay honest on the 90s."
                     },
                     {
-                        name: "Speed Ladder",
-                        details: "60m, 80m, 100m, 120m, 100m, 80m, 60m\nEffort: Max or near-max throughout\nRecovery: Walk back + 3 min (60-80m), 4-5 min (100-120m)",
-                        notes: "Full recovery between all reps. If speed drops noticeably, take more rest or stop."
+                        name: "Short Hill VO2max",
+                        details: "20 x 30 sec on moderate grade\nEffort: 5K effort\nRecovery: 30 sec",
+                        notes: "High volume VO2max accumulation."
                     },
                     {
-                        name: "Broken 200",
-                        details: "3-4 x (100m + 100m) with 30 sec between halves\n8-10 min between sets\nEffort: Race effort on both halves",
-                        notes: "Simulates 200m with a micro-rest. Should feel like racing."
-                    },
-                    {
-                        name: "Sprint-Float-Sprint 150s",
-                        details: "5 x 150m as: 50m max, 50m float, 50m max\nRecovery: 5-6 min walk/stand",
-                        notes: "Teaches relaxation at speed. The float is fast but smooth, not straining."
+                        name: "Long Hill Repeats",
+                        details: "5-6 x 90 sec on moderate grade\nEffort: 5K-10K effort\nRecovery: Jog down (~2 min total)",
+                        notes: "Strength endurance builder."
                     }
                 ],
-                'track-race-prep': [
+                'half': [
                     {
-                        name: "200m Sharpeners",
-                        details: `8-10 x 200m at goal pace or slightly faster\nTarget: ${goal200Label}\nRecovery: 2 min walk/stand`,
-                        notes: "Smooth and fast. These should feel controlled, not strained."
+                        name: "Hill VO2max",
+                        details: "8-10 x 1 min on moderate grade\nEffort: 5K effort\nRecovery: 1 min",
+                        notes: "VO2max maintenance with strength component."
                     },
                     {
-                        name: "300m Repeats",
-                        details: `5-6 x 300m at 800m-mile effort\nTarget: goal 800m/mile pace per 300m\nRecovery: 2.5-3 min`,
-                        notes: "The 300 is underrated. Long enough to hurt, short enough to stay fast."
+                        name: "Hill Ladder",
+                        details: "90 sec, 60 sec, 30 sec — repeat 3x\nEffort: Threshold on 90s, harder on shorter reps\nRecovery: Jog down between reps, 2-3 min between sets",
+                        notes: "Mixed aerobic and strength stimulus."
+                    },
+                    {
+                        name: "Long Hill Repeats",
+                        details: "6-8 x 90 sec on moderate grade\nEffort: 10K effort\nRecovery: Jog down (~2 min total)",
+                        notes: "Strength endurance. Stay controlled."
+                    },
+                    {
+                        name: "Hill Tempo",
+                        details: "2-3 x 3-4 min on steady grade\nEffort: Threshold\nRecovery: 4-5 min (jog down + extra rest)",
+                        notes: "Sustained climbing. Find your rhythm."
+                    }
+                ]
+            },
+            'pure-speed': {
+                '800': [
+                    {
+                        name: "Flat Sprints",
+                        details: "6-8 x 60m at 95%\nRecovery: 3-4 min full",
+                        notes: "Fast but relaxed. Warm up thoroughly first."
+                    },
+                    {
+                        name: "Extended Sprints",
+                        details: "4-6 x 100m at 95%\nRecovery: 4-5 min full",
+                        notes: "Longer speed work. Maintain mechanics. Warm up thoroughly first."
+                    },
+                    {
+                        name: "Speed Endurance",
+                        details: "4-5 x 150m at 95-100%\nRecovery: 6-8 min full",
+                        notes: "Extending speed. Stop if times drop significantly. Warm up very thoroughly."
+                    },
+                    {
+                        name: "Speed Development",
+                        details: "5 x 150m (50m accel, 50m max, 50m float) + 5 x 50m all out from stand\nRecovery: 3-4 min between each rep",
+                        notes: "Full speed session. Warm up very thoroughly. Floats teach relaxation."
+                    }
+                ],
+                'mile': [
+                    {
+                        name: "Flat Sprints",
+                        details: "4-6 x 60m at 95%\nRecovery: 3-4 min full",
+                        notes: "Speed maintenance. Warm up thoroughly first."
+                    },
+                    {
+                        name: "Extended Sprints",
+                        details: "4-5 x 100m at 95%\nRecovery: 4-5 min full",
+                        notes: "Longer than 60s, still pure speed. Warm up thoroughly first."
+                    },
+                    {
+                        name: "Speed Endurance",
+                        details: "3-4 x 150m at 95-100%\nRecovery: 6-8 min full",
+                        notes: "Extending speed. Stop if times drop. Warm up very thoroughly."
+                    },
+                    {
+                        name: "Speed Development",
+                        details: "5 x 150m (50m accel, 50m max, 50m float) + 5 x 50m all out from stand\nRecovery: 3-4 min between each rep",
+                        notes: "Full speed session. Warm up very thoroughly. Floats teach relaxation."
+                    }
+                ],
+                '5k': [
+                    {
+                        name: "Hill Sprints",
+                        details: "6-8 x 8-10 sec on moderate hill\nEffort: All out\nRecovery: 2-3 min full",
+                        notes: "Speed maintenance. Respect the full recovery. Every 2-4 weeks. Warm up thoroughly."
+                    },
+                    {
+                        name: "Flat Sprints",
+                        details: "4-6 x 60m at 95%\nRecovery: 3-4 min full",
+                        notes: "Optional speed maintenance. Warm up thoroughly first."
+                    },
+                    {
+                        name: "Strides Session",
+                        details: "8-10 x 100m\nSmooth acceleration building to fast (~80-85% max), smooth deceleration\nRecovery: Walk back (~90 sec)",
+                        notes: "Maintains turnover, reinforces good mechanics, and improves running economy."
+                    },
+                    {
+                        name: "Speed Development",
+                        details: "5 x 150m (50m accel, 50m max, 50m float) + 5 x 50m all out from stand\nRecovery: 3-4 min between each rep",
+                        notes: "Full speed session. Warm up very thoroughly. Floats teach relaxation."
+                    }
+                ],
+                'half': [
+                    {
+                        name: "Hill Sprints",
+                        details: "4-6 x 8-10 sec on moderate hill\nEffort: All out\nRecovery: 2-3 min full",
+                        notes: "Speed and power development in a safer way. Respect the full recoveries. Warm up thoroughly."
+                    },
+                    {
+                        name: "Strides Session",
+                        details: "8-10 x 100m\nSmooth acceleration building to fast (~80-85% max), smooth deceleration\nRecovery: Walk back (~90 sec)",
+                        notes: "Maintains turnover, reinforces good mechanics, and improves running economy."
+                    },
+                    {
+                        name: "Speed Development",
+                        details: "5 x 150m (50m accel, 50m max, 50m float) + 5 x 50m all out from stand\nRecovery: 3-4 min between each rep",
+                        notes: "Full speed session. Warm up very thoroughly. Floats teach relaxation."
+                    }
+                ]
+            },
+            'track': {
+                '800': [
+                    // Mile pace (higher volume, aerobic speed)
+                    {
+                        name: "200s at Mile Pace",
+                        details: "10-12 x 200m at mile pace\nRecovery: 200m jog",
+                        notes: "Economy work. Stay smooth and relaxed."
+                    },
+                    {
+                        name: "300s at Mile Pace",
+                        details: "6-8 x 300m at mile pace\nRecovery: 300m jog",
+                        notes: "Aerobic speed. Long enough to find rhythm."
+                    },
+                    {
+                        name: "400s at Mile Pace",
+                        details: "5-6 x 400m at mile pace\nRecovery: 400m jog",
+                        notes: "The classic R-pace session."
+                    },
+                    // 800m race pace (lower volume, sets)
+                    {
+                        name: "200s at Race Pace",
+                        details: "2-3 sets of 4 x 200m at 800m pace\nRecovery: 200m jog between reps, 4 min between sets",
+                        notes: "Race-specific speed. Sets allow quality."
+                    },
+                    {
+                        name: "300s at Race Pace",
+                        details: "2 sets of 3-4 x 300m at 800m pace\nRecovery: 300m jog between reps, 5 min between sets",
+                        notes: "Longer race-pace reps. This one hurts."
+                    },
+                    {
+                        name: "Ben's Special",
+                        details: "10 x 200m at 800m pace\nRecovery: 2 min early season, cut to 90s → 60s → 45s → 30s as fitness builds",
+                        notes: "Race-pace volume. Adjust rest as season progresses."
+                    },
+                    // Faster than race pace (sharpening)
+                    {
+                        name: "Fast 200s",
+                        details: "6-8 x 200m faster than 800m pace\nRecovery: 3 min full",
+                        notes: "Speed endurance. Extending top-end speed."
+                    },
+                    {
+                        name: "Fast 300s",
+                        details: "4-5 x 300m at 400m-800m effort\nRecovery: 4-5 min full",
+                        notes: "Speed endurance. Hold speed when it hurts."
+                    },
+                    {
+                        name: "FR Combo",
+                        details: "600 at 800m pace + 30 sec rest + 200 fast — repeat 2-3x\nRecovery: 5-7 min between sets",
+                        notes: "Gear change practice. Classic sharpening session."
+                    },
+                    {
+                        name: "Ben's Nemesis",
+                        details: "10 x 100m at 90%+\nRecovery: 30 sec",
+                        notes: "Speed endurance / lactate tolerance. A killer. Use sparingly when well trained."
+                    }
+                ],
+                'mile': [
+                    // Mile pace
+                    {
+                        name: "200s at Mile Pace",
+                        details: "8-10 x 200m at mile pace\nRecovery: 200m jog",
+                        notes: "Speed and economy."
+                    },
+                    {
+                        name: "400s at Mile Pace",
+                        details: "5-6 x 400m at mile pace\nRecovery: 400m jog",
+                        notes: "The bread and butter."
+                    },
+                    {
+                        name: "600s at Mile Pace",
+                        details: "4-5 x 600m at mile pace\nRecovery: 600m jog",
+                        notes: "Longer mile-pace reps."
+                    },
+                    {
+                        name: "800s at Mile Pace",
+                        details: "3-4 x 800m at mile pace\nRecovery: 800m jog or 4 min",
+                        notes: "Near race duration at race pace."
+                    },
+                    {
+                        name: "Mixed Mile Pace",
+                        details: "2 x 200 + 2 x 600 + 2 x 400 at mile pace\nRecovery: Jog equal distance",
+                        notes: "Variety keeps it interesting."
+                    },
+                    // 5K pace (VO2max)
+                    {
+                        name: "800s at 5K Pace",
+                        details: "4-5 x 800m at 5K pace\nRecovery: 2-3 min jog",
+                        notes: "VO2max development. Controlled aggression."
+                    },
+                    {
+                        name: "1000s at 5K Pace",
+                        details: "3-4 x 1000m at 5K pace\nRecovery: 3 min jog",
+                        notes: "Longer VO2max pieces."
+                    },
+                    {
+                        name: "1200s at 5K Pace",
+                        details: "3-4 x 1200m at 5K pace\nRecovery: 3 min jog",
+                        notes: "Max duration for VO2max work."
+                    },
+                    // 800m pace (sharpening)
+                    {
+                        name: "Fast 200s",
+                        details: "6-8 x 200m at 800m pace\nRecovery: 200m jog or 2-3 min",
+                        notes: "Speed support. Quicker than race pace."
                     },
                     {
                         name: "Fast 400s",
-                        details: `5-6 x 400m at goal pace\nTarget: ${goal400Label}\nRecovery: 2.5-3 min`,
-                        notes: "The bread and butter. Lock into goal pace and trust it."
+                        details: "4-5 x 400m at 800m-mile effort\nRecovery: 400m jog or 3 min",
+                        notes: "Extending speed toward race sharpness."
                     },
                     {
-                        name: "Speed Reserve 400s",
-                        details: `4-5 x 400m faster than goal\nTarget: ${faster400Label}\nRecovery: 3-4 min`,
-                        notes: "Building speed reserve. These should feel quick but in control."
-                    },
-                    {
-                        name: "600m at Goal Pace",
-                        details: `5-6 x 600m at goal pace\nTarget: ${hasGoal ? goalPace600 + ' (goal pace)' : 'goal pace per 600m'}\nRecovery: 3-4 min`,
-                        notes: "Longer than 400s, same pace. Tests your ability to hold goal pace."
-                    },
-                    {
-                        name: "Broken Race",
-                        details: `4 x 400m at goal pace\nTarget: ${goal400Label}\nRecovery: 60 sec between reps`,
-                        notes: "Short recovery simulates race fatigue. Should feel hard but achievable."
-                    },
-                    {
-                        name: "Classic 800s",
-                        details: "4-5 x 800m at 5K effort\nEffort: 5K feel (hard, sustainable for ~15-20 min)\nRecovery: 2.5-3 min jog/walk",
-                        notes: "Controlled aggression—don't go out too fast. Feel-based effort."
-                    },
-                    {
-                        name: "1000m Repeats",
-                        details: "3-4 x 1000m at 5K effort\nEffort: 5K feel\nRecovery: 3-4 min",
-                        notes: "Longer pieces. Stay patient early, close hard on each rep."
-                    },
-                    {
-                        name: "Mixed Ladder",
-                        details: `400, 600, 800, 600, 400\nEffort: Faster per meter as reps shorten (400s quicker than 800s)\nRecovery: 2-3 min between reps`,
-                        notes: "Variety in one session. 400s around goal pace, 800s more like 5K-10K effort."
+                        name: "Ben's Nemesis",
+                        details: "10 x 100m at 90%+\nRecovery: 30 sec",
+                        notes: "Speed endurance / lactate tolerance. A killer. Use sparingly when well trained."
                     }
                 ],
-                'tempo': [
+                '5k': [
                     {
-                        name: "Classic Tempo",
-                        details: `${scale.tempoMinutes} min at threshold effort\nEffort: Comfortably hard (could hold ~45-60 min)\nTerrain: Flat or rolling`,
-                        notes: "Short sentences possible, but not a conversation. Find a sustainable rhythm."
+                        name: "200s at Mile Pace",
+                        details: "8-10 x 200m at mile pace\nRecovery: 200m jog",
+                        notes: "Economy and leg speed. R-pace work."
+                    },
+                    {
+                        name: "400s at 3K-5K Pace",
+                        details: "8-10 x 400m at 3K-5K pace\nRecovery: 200m jog or 90 sec",
+                        notes: "Shorter reps, shorter rest. VO2max accumulation."
+                    },
+                    {
+                        name: "800s at 5K Pace",
+                        details: "5-6 x 800m at 5K pace\nRecovery: 2-3 min jog",
+                        notes: "Classic VO2max session."
+                    },
+                    {
+                        name: "1000s at 5K Pace",
+                        details: "4-5 x 1000m at 5K pace\nRecovery: 3 min jog",
+                        notes: "Standard 5K prep."
+                    },
+                    {
+                        name: "1200s at 5K Pace",
+                        details: "4-5 x 1200m at 5K pace\nRecovery: 3 min jog",
+                        notes: "Near max duration for VO2max work."
+                    },
+                    {
+                        name: "Short Intervals",
+                        details: "20 x 200m at 5K pace, start each minute\nRecovery: ~20 sec between (whatever remains in the minute)",
+                        notes: "Accumulated VO2max time. Short rest keeps you at max."
+                    },
+                    {
+                        name: "Cut-Down 800s",
+                        details: "4-5 x 800m, each slightly faster\nStart: 10K effort, Finish: 5K pace\nRecovery: 2.5-3 min",
+                        notes: "Progressive intensity. Last one should hurt."
+                    }
+                ],
+                'half': [
+                    {
+                        name: "800s at 5K Pace",
+                        details: "6-8 x 800m at 5K pace\nRecovery: 2-3 min jog",
+                        notes: "VO2max maintenance. Higher volume for endurance base."
+                    },
+                    {
+                        name: "1000s at 5K-10K Pace",
+                        details: "6-8 x 1000m at 5K-10K pace\nRecovery: 3 min jog",
+                        notes: "Solid volume at race-support pace."
+                    },
+                    {
+                        name: "1200s at 10K Pace",
+                        details: "5-6 x 1200m at 10K pace\nRecovery: 3 min jog",
+                        notes: "Half marathon support work."
+                    },
+                    {
+                        name: "Mile Repeats",
+                        details: "4-5 x 1 mile at 10K pace\nRecovery: 3-4 min jog",
+                        notes: "Long intervals. The half marathoner's bread and butter."
+                    },
+                    {
+                        name: "2-Mile Repeats",
+                        details: "2-3 x 2 miles at HM pace\nRecovery: 4-5 min jog",
+                        notes: "Race-specific longer intervals."
+                    },
+                    {
+                        name: "Cut-Down 1000s",
+                        details: "5-6 x 1000m, each slightly faster\nStart: HM effort, Finish: 10K pace\nRecovery: 3 min",
+                        notes: "Progressive effort. Last two should be honest."
+                    }
+                ]
+            },
+            'tempo': {
+                '800': [
+                    {
+                        name: "Short Tempo",
+                        details: "12-15 min at threshold\nRecovery: N/A",
+                        notes: "Comfortably hard. Endurance maintenance."
                     },
                     {
                         name: "Cruise Intervals",
-                        details: `${scale.tempoCruiseReps} x ${scale.tempoCruiseDuration} at threshold\nRecovery: 60-90 sec jog`,
-                        notes: "Broken tempo. Same stimulus, more mentally manageable."
-                    },
-                    {
-                        name: "Tempo Sandwich",
-                        details: "8 min tempo, 4 x 200m at 5K effort, 8 min tempo\nRecovery: 60 sec after each 200, 2 min before second tempo",
-                        notes: "The 200s wake up the legs. Second tempo often feels better."
-                    },
-                    {
-                        name: "Progression Run",
-                        details: `30-40 min total:\n• First third: Easy (conversational)\n• Second third: Moderate (marathon feel)\n• Final third: Threshold (comfortably hard)`,
-                        notes: "Finish faster than you start. The last segment is the work."
-                    },
-                    {
-                        name: "Tempo with Surges",
-                        details: "18-22 min tempo with 20-30 sec surge every 4 min\nSurge effort: 5K feel\nReturn to tempo immediately after",
-                        notes: "Teaches mid-race moves. Surges are controlled, not all-out."
+                        details: "4 x 4 min at threshold\nRecovery: 1 min jog",
+                        notes: "Broken tempo. Same stimulus."
                     }
                 ],
-                'long-run': [
+                'mile': [
                     {
-                        name: "Steady Long Run",
-                        details: `${scale.longRunMiles} miles at conversational pace\nEffort: Easy (can speak in full sentences)\nTerrain: Your choice`,
-                        notes: "The goal is to do it. Don't overthink pace—just get the miles in."
+                        name: "Steady Tempo",
+                        details: "15-20 min at threshold\nRecovery: N/A",
+                        notes: "Comfortably hard. Short sentences possible."
                     },
                     {
-                        name: "Long Run with Late Pickup",
-                        details: `${scale.longRunMiles} miles total\nFirst 75%: Easy\nLast 25%: Moderate effort (if feeling good)`,
-                        notes: "The pickup is optional. If the legs aren't there, just finish easy."
+                        name: "Cruise Intervals",
+                        details: "4-5 x 5 min at threshold\nRecovery: 1 min jog",
+                        notes: "Broken tempo. Mentally easier."
                     },
                     {
-                        name: "Progression Long Run",
-                        details: `${scale.longRunProgression} miles in three segments:\n• Miles 1-${Math.floor(scale.longRunProgression/3)}: Easy\n• Miles ${Math.floor(scale.longRunProgression/3)+1}-${Math.floor(scale.longRunProgression*2/3)}: Moderate\n• Miles ${Math.floor(scale.longRunProgression*2/3)+1}-${scale.longRunProgression}: Comfortably hard`,
-                        notes: "Each third slightly faster. Requires patience early."
+                        name: "Tempo + Surges",
+                        details: "15-18 min at threshold with 20-30 sec surge to 5K effort every 4 min\nRecovery: Return to threshold immediately",
+                        notes: "Teaches gear changes."
+                    }
+                ],
+                '5k': [
+                    {
+                        name: "Steady Tempo",
+                        details: "20-25 min at threshold\nRecovery: N/A",
+                        notes: "Comfortably hard. The staple."
                     },
                     {
-                        name: "Fartlek Long Run",
-                        details: `${scale.longRunMiles} miles total with surges:\nAfter 10-15 min warmup, alternate:\n2 min moderate-hard / 2 min easy\nRepeat 6-10x, then finish easy`,
-                        notes: "Keep the 'on' segments honest but controlled—not racing. Adjust the ratio (1:1, 3:2, etc.) based on feel."
+                        name: "Short Cruise",
+                        details: "3-4 x 1K at threshold\nRecovery: 1 min jog",
+                        notes: "Lower volume option. Good for early season or lower mileage."
+                    },
+                    {
+                        name: "Cruise Intervals",
+                        details: "5 x 1 mile at threshold\nRecovery: 1 min jog",
+                        notes: "Higher volume. For 50+ mpw runners."
+                    },
+                    {
+                        name: "Long Cruise",
+                        details: "3 x 2 mile at threshold\nRecovery: 2 min jog",
+                        notes: "Higher volume threshold work."
+                    },
+                    {
+                        name: "Tempo + Surges",
+                        details: "20 min at threshold with 20-30 sec surge to 5K effort every 4-5 min\nRecovery: Return to threshold immediately",
+                        notes: "Teaches mid-race moves."
+                    }
+                ],
+                'half': [
+                    {
+                        name: "Steady Tempo",
+                        details: "25-35 min at threshold\nRecovery: N/A",
+                        notes: "The foundation. Stay honest."
+                    },
+                    {
+                        name: "Short Cruise",
+                        details: "4 x 1 mile at threshold\nRecovery: 1 min jog",
+                        notes: "Moderate volume option."
+                    },
+                    {
+                        name: "Cruise Intervals",
+                        details: "5-6 x 1 mile at threshold\nRecovery: 1 min jog",
+                        notes: "Higher volume cruise work."
+                    },
+                    {
+                        name: "Long Cruise",
+                        details: "3 x 2 mile at threshold\nRecovery: 2 min jog",
+                        notes: "Solid threshold volume."
+                    },
+                    {
+                        name: "Timed Cruise",
+                        details: "4-5 x 8 min at threshold\nRecovery: 90 sec jog",
+                        notes: "Time-based alternative."
+                    },
+                    {
+                        name: "Tempo + Surges",
+                        details: "25-30 min at threshold with 20-30 sec surge every 5 min\nRecovery: Return to threshold immediately",
+                        notes: "Long tempo with gear changes."
                     }
                 ]
-            };
-        }
+            },
+            'long-run': {
+                '800': [
+                    {
+                        name: "Steady Long",
+                        details: "60-75 min at easy pace\nTerrain: Your choice",
+                        notes: "Aerobic maintenance. Don't overthink pace."
+                    },
+                    {
+                        name: "Long Run + Surges",
+                        details: "60-70 min with 4-5 x 30 sec surges to 5K effort in the second half\nRecovery: 2-3 min easy between surges",
+                        notes: "Fiber recruitment under fatigue."
+                    }
+                ],
+                'mile': [
+                    {
+                        name: "Steady Long",
+                        details: "70-85 min at easy pace\nTerrain: Your choice",
+                        notes: "Aerobic base. Just get it done."
+                    },
+                    {
+                        name: "Long Run + Surges",
+                        details: "70-80 min with 5-6 x 30-45 sec surges to 5K effort\nRecovery: 2-3 min easy between surges",
+                        notes: "Fiber recruitment mid-run."
+                    },
+                    {
+                        name: "Long Run + Pickup",
+                        details: "75-85 min total\nFinal 10-12 min progressing to threshold effort",
+                        notes: "Finishing strong under fatigue."
+                    }
+                ],
+                '5k': [
+                    {
+                        name: "Steady Long",
+                        details: "75-100 min at easy pace\nTerrain: Your choice",
+                        notes: "Aerobic foundation."
+                    },
+                    {
+                        name: "Long Run + Surges",
+                        details: "80-90 min with 6 x 30-60 sec surges to 5K effort\nRecovery: 2-3 min easy between surges",
+                        notes: "Fiber recruitment and lactate clearance."
+                    },
+                    {
+                        name: "Long Run + Pickup",
+                        details: "80-95 min total\nFinal 10-15 min progressing to threshold effort",
+                        notes: "Finishing strong."
+                    },
+                    {
+                        name: "Progression Long",
+                        details: "80-95 min in thirds:\nFirst third: Easy\nSecond third: Moderate\nFinal third: Comfortably hard",
+                        notes: "Patience early. The last third is the work."
+                    }
+                ],
+                'half': [
+                    {
+                        name: "Steady Long",
+                        details: "90-120 min at easy pace\nTerrain: Your choice",
+                        notes: "The foundation."
+                    },
+                    {
+                        name: "Long Run + Surges",
+                        details: "90-110 min with 6-8 x 30-60 sec surges\nRecovery: 3 min easy between surges",
+                        notes: "Fiber recruitment in the back half."
+                    },
+                    {
+                        name: "Long Run + Pickup",
+                        details: "100-120 min total\nFinal 15-20 min progressing to threshold effort",
+                        notes: "Race simulation finish."
+                    },
+                    {
+                        name: "Progression Long",
+                        details: "100-120 min:\nFirst half: Easy\nThird quarter: Moderate\nFinal quarter: HM effort",
+                        notes: "The marathon runner's staple."
+                    }
+                ]
+            }
+        };
 
         // =====================================================
         // STRENGTH WORKOUTS
+        // Philosophy: Compound movements, major chain training
+        // Chains: Upper Pull, Upper Push, Lower Squat, Lower Hinge
         // =====================================================
 
         const strengthWorkouts = {
             'upper': {
                 'bars-dips': [
                     {
-                        name: "Pull-up Pyramid + Dips",
-                        details: "Pull-ups: 2, 4, 6, 8, 6, 4, 2 (38 total)\nDips: 3 x 10-12\nAlternate movements throughout",
-                        notes: "Rest as needed. Pyramid keeps it interesting."
+                        name: "Pyramid",
+                        details: "Pull-ups: 2, 4, 6, 8, 6, 4, 2 (32 total)\nDips: 2, 4, 6, 8, 6, 4, 2 (32 total)\nPike Push-ups: 3 x 8-10\nAlternate movements throughout",
+                        notes: "Covers pull, horizontal push, vertical push."
                     },
                     {
                         name: "EMOM Pull/Push",
-                        details: "12 min EMOM alternating:\nOdd min: 6-8 pull-ups\nEven min: 8-10 dips",
-                        notes: "Pick numbers you can sustain for all 6 rounds."
+                        details: "12 min EMOM alternating:\nOdd min: 6-8 pull-ups\nEven min: 8-10 dips\nThen: 3 x 8-10 pike push-ups",
+                        notes: "Pick numbers you can sustain. Pike push-ups add vertical push."
                     },
                     {
                         name: "Grip Variation Day",
-                        details: "Wide pull-ups: 3 x 6-8\nChin-ups: 3 x 8-10\nClose-grip pull-ups: 2 x max\nDips: 3 x 10\nRest 60-90 sec between sets",
-                        notes: "Different grips, different emphasis. Chin-ups for biceps."
+                        details: "Wide pull-ups: 3 x 6-8\nChin-ups: 3 x 8-10\nDips: 3 x 10\nPike push-ups: 3 x 10\nDiamond push-ups: 2 x 12",
+                        notes: "Different grips, different emphasis. All chains covered."
                     },
                     {
                         name: "Volume Builder",
-                        details: "50 pull-ups + 50 dips\nBreak into whatever sets you need\nAlternate movements",
+                        details: "50 pull-ups + 50 dips + 30 pike push-ups\nBreak into whatever sets you need\nAlternate movements",
                         notes: "Simple accumulation. Track your time if you want a benchmark."
                     },
                     {
                         name: "Slow Tempo Day",
-                        details: "Pull-ups: 4 x 5 with 3-sec down, 1-sec pause at bottom\nDips: 4 x 6 with 3-sec down\nRest 90 sec between sets",
+                        details: "Pull-ups: 4 x 5 with 3-sec down, 1-sec pause at bottom\nDips: 4 x 6 with 3-sec down\nPike push-ups: 3 x 8 slow",
                         notes: "Control the eccentric. Harder than it looks."
+                    },
+                    {
+                        name: "Ben's Special",
+                        details: "100 pull-ups + 200 push-ups\nAs fast as possible\nSets and reps up to you",
+                        notes: "Simple. Brutal. Time it and try to beat it."
                     }
                 ],
                 'bars-no-dips': [
                     {
-                        name: "Pull-up Pyramid + Push-ups",
-                        details: "Pull-ups: 2, 4, 6, 8, 6, 4, 2 (38 total)\nPush-ups: 3 x 15-20\nAlternate movements throughout",
-                        notes: "Rest as needed. Pyramid keeps it interesting."
+                        name: "Pyramid",
+                        details: "Pull-ups: 2, 4, 6, 8, 6, 4, 2 (32 total)\nPush-ups: 4, 8, 12, 16, 12, 8, 4 (64 total)\nPike push-ups: 3 x 8-10\nAlternate movements throughout",
+                        notes: "Covers pull, horizontal push, vertical push."
                     },
                     {
                         name: "EMOM Pull/Push",
-                        details: "12 min EMOM alternating:\nOdd min: 6-8 pull-ups\nEven min: 12-15 push-ups",
-                        notes: "Pick numbers you can sustain for all 6 rounds."
+                        details: "12 min EMOM alternating:\nOdd min: 6-8 pull-ups\nEven min: 12-15 push-ups\nThen: 3 x 8-10 pike push-ups",
+                        notes: "Pick numbers you can sustain. Pike push-ups add vertical push."
                     },
                     {
-                        name: "Grip Variation + Pike",
-                        details: "Wide pull-ups: 3 x 6-8\nChin-ups: 3 x 8-10\nClose-grip pull-ups: 2 x max\nPike push-ups: 3 x 10\nPush-ups: 2 x 15\nRest 60-90 sec between sets",
-                        notes: "Different grips for pulling, pike push-ups for shoulder pressing stimulus."
+                        name: "Grip Variation Day",
+                        details: "Wide pull-ups: 3 x 6-8\nChin-ups: 3 x 8-10\nClose-grip pull-ups: 2 x max\nDiamond push-ups: 3 x 12-15\nPike push-ups: 3 x 8",
+                        notes: "Different grips, different emphasis."
                     },
                     {
                         name: "Volume Builder",
-                        details: "50 pull-ups + 75 push-ups\nBreak into whatever sets you need\nAlternate movements",
-                        notes: "Simple accumulation. Track your time if you want a benchmark."
+                        details: "50 pull-ups + 75 push-ups + 30 pike push-ups\nBreak into whatever sets you need\nAlternate movements",
+                        notes: "Simple accumulation."
                     },
                     {
                         name: "Slow Tempo Day",
-                        details: "Pull-ups: 4 x 5 with 3-sec down, 1-sec pause at bottom\nDiamond push-ups: 4 x 10 with 2-sec down\nPike push-ups: 3 x 8\nRest 90 sec between sets",
-                        notes: "Control the eccentric. Harder than it looks."
+                        details: "Pull-ups: 4 x 5 with 3-sec down, 1-sec pause at bottom\nPush-ups: 4 x 10 with 3-sec down\nPike push-ups: 3 x 8 slow",
+                        notes: "Control the eccentric."
+                    },
+                    {
+                        name: "Ben's Special",
+                        details: "100 pull-ups + 200 push-ups\nAs fast as possible\nSets and reps up to you",
+                        notes: "Simple. Brutal. Time it and try to beat it."
                     }
                 ],
                 'dumbbells': [
                     {
-                        name: "Press & Row",
-                        details: "DB Floor Press: 4 x 10-12\nDB Bent Over Row: 4 x 10-12 each arm\nDB Overhead Press: 3 x 8-10\nRest 60-90 sec between sets",
-                        notes: "Alternate push and pull."
+                        name: "DB Upper Builder",
+                        details: "DB Row: 4 x 10 each arm\nDB Floor Press: 4 x 10-12\nDB Overhead Press: 3 x 10\nDB Curl: 2 x 12",
+                        notes: "Balanced push/pull, vertical/horizontal."
                     },
                     {
-                        name: "Upper Circuit",
-                        details: "3-4 rounds:\n10 DB Push Press\n12 Renegade Rows (6 each side)\n15 DB Curls\nRest 90 sec between rounds",
-                        notes: "Keep moving but don't rush. Quality reps."
+                        name: "Row Focus",
+                        details: "DB Row: 4 x 10 each\nDB Floor Press: 3 x 12\nDB Overhead Press: 3 x 10\nDB Reverse Fly: 3 x 12",
+                        notes: "Pull emphasis. Good for posture."
                     },
                     {
-                        name: "Shoulder Emphasis",
-                        details: "Arnold Press: 4 x 8-10\nDB Row: 4 x 10 each\nDB Lateral Raise: 3 x 12-15 (lighter)\nDB Reverse Fly: 3 x 12-15\nRest 60-90 sec between sets",
-                        notes: "Shoulders get priority, but rows and reverse flys keep it balanced."
-                    },
-                    {
-                        name: "Row & Press",
-                        details: "DB Row: 4 x 10 each arm\nDB Floor Press: 4 x 10-12\nDB Reverse Fly: 3 x 12-15\nDB Overhead Press: 3 x 8-10\nRest 60-90 sec between sets",
-                        notes: "Pulling and pressing balanced. Superset row/press to save time."
+                        name: "Press Focus",
+                        details: "DB Floor Press: 4 x 10\nDB Overhead Press: 4 x 8-10\nDB Row: 3 x 10 each\nDB Lateral Raise: 2 x 12",
+                        notes: "Pressing emphasis, pulling still included."
                     }
                 ],
                 'gym': [
                     {
-                        name: "Barbell + Bodyweight",
-                        details: "Bench Press: 4 x 6-8\nBarbell Row: 4 x 6-8\nPull-ups: 3 x max\nOverhead Press: 3 x 8-10\nDips: 3 x 10-12\nRest 90 sec-2 min between sets",
-                        notes: "Heavy compounds plus bodyweight staples."
+                        name: "Bench & Row",
+                        details: "Bench Press: 4 x 6-8\nBarbell Row: 4 x 8\nOverhead Press: 3 x 8\nPull-ups: 3 x max",
+                        notes: "The standards. Push/pull balance."
                     },
                     {
-                        name: "Vertical Emphasis",
-                        details: "Overhead Press: 4 x 6-8\nPull-ups: 4 x 8-10\nDips: 3 x 10-12\nBarbell or DB Row: 3 x 10\nRest 2 min after OHP, 90 sec otherwise",
-                        notes: "Vertical push and pull get priority."
+                        name: "Upper Volume",
+                        details: "Pull-ups: 4 x 8-10\nBench Press: 4 x 8-10\nDB Row: 3 x 10 each\nOverhead Press: 3 x 10\nDB Curl: 2 x 12",
+                        notes: "Higher rep balanced work."
                     },
                     {
-                        name: "Horizontal Emphasis",
-                        details: "Barbell Row: 4 x 8\nBench Press: 4 x 8\nFace Pulls or Band Pull-aparts: 3 x 15\nDips: 3 x 10-12\nRest 90 sec-2 min between sets",
-                        notes: "Horizontal push and pull get priority."
-                    },
-                    {
-                        name: "Volume Day",
-                        details: "Bench Press: 3 x 10\nPull-ups: 4 x 8-10\nOHP: 3 x 10\nCable or DB Row: 3 x 12\nTricep work: 2 x 15\nRest 60-90 sec between sets",
-                        notes: "Moderate weight, more reps. Get a pump."
+                        name: "Upper Strength",
+                        details: "Bench Press: 4 x 5-6\nBarbell Row: 4 x 5-6\nOverhead Press: 3 x 6-8\nPull-ups: 3 x max\nDips: 2 x 8-10",
+                        notes: "Heavier, lower rep. Push/pull balanced."
                     }
                 ]
             },
             'lower': {
                 'bars-dips': [
                     {
-                        name: "Single-Leg Focus",
-                        details: "Pistol squats: 3 x 5-8 each leg (use bar for balance if needed)\nBulgarian split squat (rear foot on bar): 3 x 10 each\nSingle-leg calf raise: 3 x 15 each\nGlute bridge: 3 x 15\nRest 60-90 sec between sets",
-                        notes: "Unilateral work. Scale pistols as needed."
+                        name: "Bodyweight Lower",
+                        details: "Pistol progressions: 3 x 5 each leg\nSingle-leg RDL: 3 x 8 each\nBulgarian split squat (foot on bar): 3 x 10 each\nSingle-leg glute bridge: 3 x 10 each",
+                        notes: "Single-leg focus. Squat and hinge patterns covered."
                     },
                     {
-                        name: "Posterior Chain",
-                        details: "Single-leg RDL: 4 x 8 each (bodyweight)\nGlute bridge: 3 x 15-20\nReverse lunge: 3 x 10 each leg\nCalf raises: 3 x 20\nRest 60 sec between sets",
-                        notes: "Hamstrings and glutes. Balances quad-heavy hill work."
+                        name: "Squat & Hinge",
+                        details: "Air squats: 3 x 20\nSingle-leg RDL: 3 x 10 each\nCossack squats: 2 x 8 each side\nGlute bridge: 3 x 15",
+                        notes: "Balanced anterior and posterior work."
                     },
                     {
-                        name: "Squat Endurance",
-                        details: "Bodyweight squats: 25, 20, 15, 10\nJump squats: 5 reps between each BW set\nCossack squats: 2 x 8 each side\nGlute bridge: 2 x 15\nRest 60-90 sec between BW sets",
-                        notes: "Higher volume. Jump squats add some power stimulus."
+                        name: "Lower Power",
+                        details: "Jump squats: 3 x 8\nBroad jumps: 3 x 5\nBulgarian split squat: 3 x 8 each\nSingle-leg glute bridge: 3 x 10 each",
+                        notes: "Plyo emphasis plus strength. Controlled landings."
                     }
                 ],
                 'bars-no-dips': [
                     {
-                        name: "Single-Leg Focus",
-                        details: "Pistol squats: 3 x 5-8 each leg (use bar for balance if needed)\nBulgarian split squat (rear foot elevated): 3 x 10 each\nSingle-leg calf raise: 3 x 15 each\nGlute bridge: 3 x 15\nRest 60-90 sec between sets",
-                        notes: "Unilateral work. Scale pistols as needed."
+                        name: "Bodyweight Lower",
+                        details: "Pistol progressions: 3 x 5 each leg\nSingle-leg RDL: 3 x 8 each\nBulgarian split squat: 3 x 10 each\nSingle-leg glute bridge: 3 x 10 each",
+                        notes: "Single-leg focus. Squat and hinge patterns covered."
                     },
                     {
-                        name: "Posterior Chain",
-                        details: "Single-leg RDL: 4 x 8 each (bodyweight)\nGlute bridge: 3 x 15-20\nReverse lunge: 3 x 10 each leg\nCalf raises: 3 x 20\nRest 60 sec between sets",
-                        notes: "Hamstrings and glutes. Balances quad-heavy hill work."
+                        name: "Squat & Hinge",
+                        details: "Air squats: 3 x 20\nSingle-leg RDL: 3 x 10 each\nCossack squats: 2 x 8 each side\nGlute bridge: 3 x 15",
+                        notes: "Balanced anterior and posterior work."
                     },
                     {
-                        name: "Squat Endurance",
-                        details: "Bodyweight squats: 25, 20, 15, 10\nJump squats: 5 reps between each BW set\nCossack squats: 2 x 8 each side\nGlute bridge: 2 x 15\nRest 60-90 sec between BW sets",
-                        notes: "Higher volume. Jump squats add some power stimulus."
+                        name: "Lower Power",
+                        details: "Jump squats: 3 x 8\nLateral bounds: 3 x 6 each side\nPistol progressions: 3 x 5 each\nGlute bridge: 3 x 15",
+                        notes: "Plyo emphasis plus strength. Controlled landings."
                     }
                 ],
                 'dumbbells': [
                     {
                         name: "DB Lower Builder",
-                        details: "Goblet Squat: 4 x 10-12\nDB RDL: 4 x 10\nDB Bulgarian Split Squat: 3 x 8 each\nDB Calf Raise: 3 x 15\nRest 60-90 sec between sets",
+                        details: "Goblet Squat: 4 x 10-12\nDB RDL: 4 x 10\nDB Bulgarian Split Squat: 3 x 8 each\nDB Calf Raise: 3 x 15",
                         notes: "Solid all-around. Go deep on goblet squats."
                     },
                     {
                         name: "Single-Leg Day",
-                        details: "DB Step-ups: 4 x 8 each leg\nDB Single-leg RDL: 4 x 8 each\nDB Reverse Lunge: 3 x 10 each\nGoblet Squat: 2 x 15\nRest 60-90 sec between sets",
-                        notes: "Unilateral emphasis for balance and stability."
+                        details: "DB Step-ups: 4 x 8 each leg\nDB Single-leg RDL: 4 x 8 each\nDB Reverse Lunge: 3 x 10 each\nGoblet Squat: 2 x 15",
+                        notes: "Unilateral emphasis."
                     },
                     {
                         name: "Hinge & Squat",
-                        details: "DB RDL: 4 x 10\nGoblet Squat: 4 x 10-12\nDB Hip Thrust: 3 x 12\nDB Reverse Lunge: 3 x 8 each\nRest 60-90 sec between sets",
+                        details: "DB RDL: 4 x 10\nGoblet Squat: 4 x 10-12\nDB Hip Thrust: 3 x 12\nDB Reverse Lunge: 3 x 8 each",
                         notes: "Posterior and anterior balanced."
                     }
                 ],
                 'gym': [
                     {
                         name: "Barbell Lower",
-                        details: "Back Squat: 4 x 6-8\nRomanian Deadlift: 4 x 8\nBulgarian Split Squat: 3 x 8 each\nCalf Raises: 4 x 12\nRest 2 min after squats/RDL, 90 sec for accessories",
-                        notes: "The standards. Prioritize squat and RDL."
+                        details: "Back Squat: 4 x 6-8\nRomanian Deadlift: 4 x 8\nBulgarian Split Squat: 3 x 8 each\nCalf Raises: 4 x 12",
+                        notes: "The standards. Squat and hinge covered."
                     },
                     {
                         name: "Squat Focus",
-                        details: "Back Squat: 4 x 6-8\nRDL or Good Morning: 3 x 10\nFront Squat or Leg Press: 3 x 8-10\nHamstring Curl: 3 x 12\nRest 2 min after squats, 90 sec for accessories",
-                        notes: "Squat is the priority, but posterior chain stays in the mix."
+                        details: "Back Squat: 4 x 6-8\nFront Squat: 3 x 8-10\nRomanian Deadlift: 3 x 10\nGlute Bridge or Hip Thrust: 3 x 12",
+                        notes: "Squat priority, posterior chain still included."
                     },
                     {
                         name: "Deadlift Day",
-                        details: "Conventional or Sumo Deadlift: 4 x 5\nGoblet Squat or Front Squat: 3 x 10\nHip Thrust: 3 x 10\nWalking Lunges: 2 x 16 steps\nRest 2-3 min after deadlifts, 90 sec for accessories",
-                        notes: "Deadlift is the priority, with squats and lunges for quad balance."
-                    },
-                    {
-                        name: "Unilateral + Accessories",
-                        details: "Bulgarian Split Squat: 4 x 8 each (barbell or DB)\nSingle-leg RDL: 3 x 10 each\nLeg Curl: 3 x 12\nCalf Raise: 4 x 15\nRest 60-90 sec between sets",
-                        notes: "Single-leg focus. Good for addressing imbalances."
+                        details: "Deadlift: 4 x 5\nGoblet Squat or Front Squat: 3 x 10\nHip Thrust: 3 x 10\nWalking Lunges: 2 x 16 steps",
+                        notes: "Deadlift priority. Squat pattern as accessory."
                     }
                 ]
             },
@@ -1285,82 +1179,63 @@
                 'bars-dips': [
                     {
                         name: "Bar Circuit",
-                        details: "4 rounds:\n8 Pull-ups\n10 Dips\n10 Pistols or assisted pistols (total, not each)\n15 Air squats\nGlute bridge: 10\nRest 2 min between rounds",
-                        notes: "Full body with bars. Scale as needed."
+                        details: "4 rounds:\n8 Pull-ups\n10 Dips\n8 Bulgarian split squats (each leg)\n10 Single-leg RDL (total)\n10 Glute bridges",
+                        notes: "Full body with bars. All chains covered."
                     },
                     {
                         name: "Upper-Lower Alternating",
-                        details: "Pull-ups: 4 x 8\nBulgarian Split Squat (foot on bar): 3 x 10 each\nDips: 4 x 10\nSingle-leg RDL: 3 x 8 each\nGlute bridge: 2 x 15\nRest 60-90 sec between sets",
+                        details: "Pull-ups: 4 x 8\nBulgarian Split Squat: 3 x 10 each\nDips: 4 x 10\nSingle-leg RDL: 3 x 8 each\nPike push-ups: 3 x 8\nGlute bridge: 2 x 15",
                         notes: "Alternate upper and lower. Keeps rest productive."
-                    },
-                    {
-                        name: "Quick AMRAP",
-                        details: "AMRAP 15 min:\n5 Pull-ups\n10 Dips\n15 Air squats",
-                        notes: "When time is short. Track total rounds."
                     }
                 ],
                 'bars-no-dips': [
                     {
                         name: "Bar Circuit",
-                        details: "4 rounds:\n8 Pull-ups\n12 Push-ups\n6 Pike push-ups\n10 Pistols or assisted (total)\n15 Air squats\nRest 2 min between rounds",
-                        notes: "Full body with pull-up bar only. Scale as needed."
+                        details: "4 rounds:\n8 Pull-ups\n12 Push-ups\n8 Bulgarian split squats (each leg)\n10 Single-leg RDL (total)\n10 Glute bridges",
+                        notes: "Full body. All chains covered."
                     },
                     {
                         name: "Upper-Lower Alternating",
-                        details: "Pull-ups: 4 x 8\nBulgarian Split Squat: 3 x 10 each\nPush-ups: 3 x 15\nPike push-ups: 3 x 8\nSingle-leg RDL: 3 x 8 each\nGlute bridge: 2 x 15\nRest 60-90 sec between sets",
-                        notes: "Alternate upper and lower. Keeps rest productive."
-                    },
-                    {
-                        name: "Quick AMRAP",
-                        details: "AMRAP 15 min:\n5 Pull-ups\n10 Push-ups\n5 Pike push-ups\n15 Air squats",
-                        notes: "When time is short. Track total rounds."
+                        details: "Pull-ups: 4 x 8\nBulgarian Split Squat: 3 x 10 each\nPush-ups: 3 x 15\nSingle-leg RDL: 3 x 8 each\nPike push-ups: 3 x 8\nGlute bridge: 2 x 15",
+                        notes: "Alternate upper and lower."
                     }
                 ],
                 'dumbbells': [
                     {
                         name: "DB Full Body Classic",
-                        details: "Goblet Squat: 3 x 12\nDB Row: 3 x 10 each\nDB Floor Press: 3 x 12\nDB RDL: 3 x 10\nDB Overhead Press: 3 x 10\nRest 60-90 sec between sets",
-                        notes: "Hits everything. 25-30 min if you keep moving."
+                        details: "Goblet Squat: 3 x 12\nDB Row: 3 x 10 each\nDB Floor Press: 3 x 12\nDB RDL: 3 x 10\nDB Overhead Press: 3 x 10",
+                        notes: "Hits everything. 25-30 min."
                     },
                     {
                         name: "DB Complex",
-                        details: "5 rounds, don't put DBs down:\n6 DB Deadlifts\n6 DB Rows (each arm)\n6 DB Push Press\n6 DB Front Squats\nRest 2 min between rounds",
-                        notes: "Continuous work within each round. Conditioning + strength."
+                        details: "5 rounds, don't put DBs down:\n6 DB Deadlifts\n6 DB Rows (each arm)\n6 DB Push Press\n6 DB Front Squats",
+                        notes: "Continuous work. Conditioning + strength."
                     },
                     {
                         name: "DB Upper-Lower Mix",
-                        details: "DB Bulgarian Split Squat: 4 x 8 each\nDB Floor Press: 4 x 10\nDB Single-leg RDL: 3 x 8 each\nDB Row: 4 x 10 each\nDB Curl to Press: 2 x 10\nRest 60-90 sec between sets",
-                        notes: "Alternating pattern. Good balance of everything."
+                        details: "DB Bulgarian Split Squat: 4 x 8 each\nDB Floor Press: 4 x 10\nDB Single-leg RDL: 3 x 8 each\nDB Row: 4 x 10 each\nDB Overhead Press: 3 x 8",
+                        notes: "Alternating pattern. All chains hit."
                     }
                 ],
                 'gym': [
                     {
-                        name: "Big Lifts + Accessories",
-                        details: "Squat: 4 x 6\nBench Press: 4 x 6\nBarbell Row: 4 x 8\nRDL: 3 x 8\nPull-ups: 3 x max\nRest 2 min after squat/bench/row, 90 sec for accessories",
-                        notes: "Compound lifts plus pull-ups. Efficient session."
+                        name: "Big Lifts",
+                        details: "Squat: 4 x 6\nBench Press: 4 x 6\nBarbell Row: 4 x 8\nRDL: 3 x 8\nPull-ups: 3 x max",
+                        notes: "Compound lifts. Simple and effective."
                     },
                     {
                         name: "Push-Pull-Legs Circuit",
-                        details: "3 rounds:\nOverhead Press: 8 reps\nPull-ups: 8 reps\nGoblet Squat: 10 reps\nDips: 10 reps\nDB RDL: 10 reps\nRest 2-3 min between rounds",
-                        notes: "Everything gets hit. Good flow."
-                    },
-                    {
-                        name: "Strength + Bodyweight",
-                        details: "Deadlift: 4 x 5\nBench Press: 4 x 8\nPull-ups: 4 x 8-10\nBulgarian Split Squat: 3 x 8 each\nDips: 3 x 12\nRest 2-3 min after deadlift, 90 sec-2 min otherwise",
-                        notes: "Barbell for big lifts, bodyweight for accessories."
+                        details: "3 rounds:\nOverhead Press: 8 reps\nPull-ups: 8 reps\nGoblet Squat: 10 reps\nDips: 10 reps\nDB RDL: 10 reps",
+                        notes: "Everything gets hit."
                     },
                     {
                         name: "Quick Full Body",
-                        details: "Back Squat: 3 x 8\nPull-ups: 3 x 10\nOHP: 3 x 8\nDB RDL: 3 x 10\nPush-ups: 2 x 20\nRest 90 sec between sets",
-                        notes: "20-25 minutes. When time is tight but you want everything."
+                        details: "Back Squat: 3 x 8\nPull-ups: 3 x 10\nOHP: 3 x 8\nRDL: 3 x 10\nPush-ups: 2 x 20",
+                        notes: "20-25 minutes. When time is tight."
                     }
                 ]
             }
         };
-
-        // =====================================================
-        // GENERATE FUNCTIONS
-        // =====================================================
 
         function shuffle(array) {
             const arr = [...array];
@@ -1372,10 +1247,18 @@
         }
 
         function generateRunning() {
-            const type = document.getElementById('running-type').value;
             const goalEvent = document.getElementById('goal-event').value;
-            const workouts = getRunningWorkouts(goalEvent)[type];
-            const selected = shuffle(workouts).slice(0, 3);
+            const type = document.getElementById('running-type').value;
+            const workouts = runningWorkouts[type][goalEvent];
+            
+            if (!workouts || workouts.length === 0) {
+                document.getElementById('running-results').innerHTML = '<div class="results-header">No workouts available for this combination</div>';
+                document.getElementById('running-results').classList.remove('hidden');
+                return;
+            }
+            
+            const numOptions = Math.min(3, workouts.length);
+            const selected = shuffle(workouts).slice(0, numOptions);
             
             const resultsDiv = document.getElementById('running-results');
             resultsDiv.classList.remove('hidden');
@@ -1395,7 +1278,6 @@
             const type = document.getElementById('strength-type').value;
             let equipment = document.getElementById('equipment').value;
             
-            // Check for dip bars if using bars equipment
             if (equipment === 'bars') {
                 const hasDipBars = document.getElementById('has-dip-bars').checked;
                 equipment = hasDipBars ? 'bars-dips' : 'bars-no-dips';
@@ -1418,6 +1300,9 @@
                 `).join('')}
             `;
         }
+
+        document.getElementById('generate-running-btn').addEventListener('click', generateRunning);
+        document.getElementById('generate-strength-btn').addEventListener('click', generateStrength);
     </script>
 </body>
 </html>
